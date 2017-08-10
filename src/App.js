@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import WrapperNextPostButton from './components/WrapperNextPostButton';
-
-const data = {
-  modifier      : 'Modifier',
-  text_header   : 'Text header',
-  text_title    : 'Text title',
-  link_url      : 'http://www.90min.com'
-};
 
 class App extends Component {
   render() {
@@ -22,7 +14,6 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-          <WrapperNextPostButton {...data}/>
         </div>
       </div>
     );

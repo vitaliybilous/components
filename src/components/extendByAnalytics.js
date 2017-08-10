@@ -8,8 +8,7 @@ const extendByAnalytics = (WrappedComponent) => {
        ? 'top menu arrow'
        : (modifier === 'body')
            ? 'side arrow'
-           : ''
-       ;
+           : '';
 
       return (
         <WrappedComponent
