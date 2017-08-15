@@ -12,8 +12,8 @@ class TopicContainer extends Component {
     return has_video_bg
       ? <CoverVideo image_url={image_url} video_url={video_url} element_name='page-topic__cover'/>
       : <CoverImage image_url={image_url} element_name='page-topic__cover'
-                    small_image_url={is_static ? small_image_url : null}
-      />
+          small_image_url={is_static ? small_image_url : null}
+        />
   }
 
   getNoneStaticElements() {

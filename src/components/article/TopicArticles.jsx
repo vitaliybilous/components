@@ -8,7 +8,7 @@ class TopicArticles extends Component {
     return (
       <section className='topic-articles'>
         {articles.map((article, index) =>
-          <Article { ...article} read_more_text={read_more_text} dataAttributes={dataAttributes}/>)
+          <Article { ...article} read_more_text={read_more_text} dataAttributes={dataAttributes} key={index} index={index}/>)
         }
       </section>
     );

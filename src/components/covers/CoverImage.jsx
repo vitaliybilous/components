@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class CoverImage extends Component {
   render() {
-    const {  element_name, image_url, small_image_url } = this.props;
+    const { element_name, image_url, small_image_url } = this.props;
     const smallBg = small_image_url ? {
       backgroundImage : `url('${small_image_url}')`
     } : null;
