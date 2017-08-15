@@ -7,7 +7,7 @@ class ContentSingle extends Component {
 
     return (
       <div className={element_component_name} data-read-more-text={read_more_text}>
-        <h2 className={`${ element_component_name }-header`}>
+        <h2 className={`${element_component_name}-header`}>
           {topic_title}
         </h2>
       </div>

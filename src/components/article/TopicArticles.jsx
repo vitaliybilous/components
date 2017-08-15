@@ -3,7 +3,7 @@ import Article from './Article';
 
 class TopicArticles extends Component {
   render() {
-    const { articles, read_more_text, dataAttributes } = this.props;
+    const { articles = [], read_more_text, dataAttributes } = this.props;
 
     return (
       <section className='topic-articles'>

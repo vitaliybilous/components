@@ -17,7 +17,7 @@ class TopicContainer extends Component {
   }
 
   getNoneStaticElements() {
-    const {topic_title, topic_type, articles, single_article, topic_subtitle} = this.props;
+    const {topic_title, topic_type, articles = [], single_article, topic_subtitle} = this.props;
 
     return (
       <div className={`page-topic__content page-topic__content--${ topic_type }`}>
