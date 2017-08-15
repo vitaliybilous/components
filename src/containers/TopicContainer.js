@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import CoverVideo from "./CoverVideo";
-import CoverImage from "./CoverImage";
-import ContentMulti from "./ContentMulti";
-import ContentSingle from "./ContentSingle";
-import TopicArticles from "./TopicArticles";
+import CoverVideo from "../components/covers/CoverVideo";
+import CoverImage from "../components/covers/CoverImage";
+import ContentMulti from "../components/contents/ContentMulti";
+import ContentSingle from "../components/contents/ContentSingle";
+import TopicArticles from "../components/article/TopicArticles";
 
 class TopicContainer extends Component {
   getCoverElement() {
@@ -38,12 +38,12 @@ class TopicContainer extends Component {
   }
 
   render() {
-    const {topic_title, topic_type, topic_path, is_static, dataAttributes} = this.props;
+    const {topic_title, topic_type, topic_path, is_static, dataAttribute} = this.props;
     const className = `page-topic ${is_static ? 'page-topic--has-static-image' : ''}`;
 
     return (
       <section className={className}>
-        <a { ...dataAttributes } className={`page-topic__cover page-topic__cover--${topic_type} static_image_class `}
+        <a { ...dataAttribute } className={`page-topic__cover page-topic__cover--${topic_type} static_image_class `}
            href={topic_path} title={topic_title}>
           { this.getCoverElement() }
           { !is_static ? this.getNoneStaticElements() : null }
