@@ -1,13 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Component from '../CoverImage';
 import { shallow } from 'enzyme';
 import 'jest-enzyme';
 
 describe('CoverImage', () => {
   it('should renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Component />, div);
+    shallow(<Component />);
   });
 
   it('should component to have background image', () => {

@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import extendByAnalytics from '../extendByAnalytics';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import 'jest-enzyme';
 
 describe('Analytics HOC', () => {
@@ -12,7 +11,7 @@ describe('Analytics HOC', () => {
   it('should renders without crashing', () => {
     const div = document.createElement('div');
     const Component = extendByAnalytics(TestComponent, {});
-    ReactDOM.render(<Component />, div);
+    shallow(<Component/>)
   });
 
   it('should call wrapped component', () => {

@@ -1,13 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Component from '../ErrorPage';
 import { shallow } from 'enzyme';
 import 'jest-enzyme';
 
 describe('ErrorPage', () => {
   it('should renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Component />, div);
+    shallow(<Component />);
   });
 
   it('should to have title and url', () => {

@@ -1,13 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Component from '../CoverVideo';
 import { shallow } from 'enzyme';
 import 'jest-enzyme';
 
 describe('CoverVideo', () => {
   it('should renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Component />, div);
+    shallow(<Component />);
   });
 
   it('should component to have video src and class', () => {

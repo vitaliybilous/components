@@ -1,17 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import WrappedComponent from '../WrapperTopicContainer';
-import { mount } from 'enzyme';
+import Component from '../WrapperTopicContainer';
+import { mount, shallow } from 'enzyme';
 import 'jest-enzyme';
 
 describe('WrapperTopicContainer', () => {
   it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<WrappedComponent/>, div);
+    shallow(<Component />);
   });
 
   it('should renders with data-* attributes', () => {
-    const wrapper = mount(<WrappedComponent />);
+    const wrapper = mount(<Component />);
     const selector = '[data-analytics-event-category="Topic page"]';
 
     expect(wrapper.find(selector)).toBePresent();

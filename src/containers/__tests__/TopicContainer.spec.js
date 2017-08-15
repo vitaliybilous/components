@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Component from '../TopicContainer';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import 'jest-enzyme';
 import CoverVideo from '../../components/covers/CoverVideo';
 import CoverImage from '../../components/covers/CoverImage';
@@ -12,8 +11,7 @@ import ContentSingle from '../../components/contents/ContentSingle';
 
 describe('FeedPageHeader', () => {
   it('should renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Component />, div);
+    shallow(<Component />);
   });
 
   it('should rendered cover part : video & image', () => {

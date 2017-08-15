@@ -1,17 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import WrappedComponent from '../WrapperNextPostButton';
-import { mount } from 'enzyme';
+import Component from '../WrapperNextPostButton';
+import { mount, shallow } from 'enzyme';
 import 'jest-enzyme';
 
 describe('WrapperNextPostButton', () => {
   it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<WrappedComponent/>, div);
+    shallow(<Component />);
   });
 
   it('should renders with data-* attributes', () => {
-    const wrapper = mount(<WrappedComponent />);
+    const wrapper = mount(<Component />);
     const selector = '[data-analytics-event-category="Article page"]';
 
     expect(wrapper.find(selector)).toBePresent();
