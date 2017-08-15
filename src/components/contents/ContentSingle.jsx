@@ -6,7 +6,7 @@ class ContentSingle extends Component {
     const element_component_name = `${block_name }__single-title`;
 
     return (
-      <div className=${element_component_name} data-read-more-text={read_more_text}>
+      <div className={element_component_name} data-read-more-text={read_more_text}>
         <h2 className={`${ element_component_name }-header`}>
           {topic_title}
         </h2>

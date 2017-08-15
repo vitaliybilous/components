@@ -6,7 +6,7 @@ class ContentMulti extends Component {
     const element_component_name = `${block_name }__multi`;
 
     return (
-      <div className=${element_component_name}>
+      <div className={element_component_name}>
         <p className={`${element_component_name}-title`}>
           {topic_title}
         </p>
