@@ -1,30 +1,20 @@
 import React, { Component } from 'react';
 
-const extendByAnalytics = (WrappedComponent) => {
+const prepareDataAttr = (prop, opts) => typeof prop === 'function' ? prop(opts) : prop;
+
+const extendByAnalytics = (WrappedComponent, options) => {
   return class extends Component {
     render() {
       const { dataAnalyticsEventCategory, dataAnalyticsEventAction, dataAnalyticsEventLabel,
-        dataAnalyticsEventIndex } = this.props;
+        dataAnalyticsEventIndex } = options;
 
-      const localDataAnalyticsEventCategory = typeof dataAnalyticsEventCategory === 'function'
-        ? dataAnalyticsEventCategory(this.props)
-        : dataAnalyticsEventCategory;
-      const localDataAnalyticsEventAction = typeof dataAnalyticsEventAction === 'function'
-        ? dataAnalyticsEventAction(this.props)
-        : dataAnalyticsEventAction;
-      const localDataAnalyticsEventLabel = typeof dataAnalyticsEventLabel === 'function'
-        ? dataAnalyticsEventLabel(this.props)
-        : dataAnalyticsEventLabel;
-      const localDataAnalyticsEventIndex = typeof dataAnalyticsEventIndex === 'function'
-        ? dataAnalyticsEventIndex(this.props)
-        : dataAnalyticsEventIndex;
       return (
         <WrappedComponent
           dataAttribute={{
-            'data-analytics-event-category' : localDataAnalyticsEventCategory,
-            'data-analytics-event-action' : localDataAnalyticsEventAction,
-            'data-analytics-event-label' : localDataAnalyticsEventLabel,
-            'data-analytics-event-value' : localDataAnalyticsEventIndex
+            'data-analytics-event-category' : prepareDataAttr(dataAnalyticsEventCategory, options),
+            'data-analytics-event-action' : prepareDataAttr(dataAnalyticsEventAction, options),
+            'data-analytics-event-label' : prepareDataAttr(dataAnalyticsEventLabel, options),
+            'data-analytics-event-value' : prepareDataAttr(dataAnalyticsEventIndex, options)
           }}
           {...this.props} />);
     }
