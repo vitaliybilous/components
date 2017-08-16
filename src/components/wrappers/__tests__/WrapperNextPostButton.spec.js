@@ -14,4 +14,18 @@ describe('WrapperNextPostButton', () => {
 
     expect(wrapper.find(selector)).toBePresent();
   });
+
+  it('should renders with modifier header props', () => {
+    const wrapper = mount(<Component modifier='header'/>);
+    const selector = '[data-analytics-event-label="top menu arrow"]';
+
+    expect(wrapper.find(selector)).toBePresent();
+  });
+
+  it('should renders with modifier body props', () => {
+    const wrapper = mount(<Component modifier='body'/>);
+    const selector = '[data-analytics-event-label="side arrow"]';
+
+    expect(wrapper.find(selector)).toBePresent();
+  });
 });

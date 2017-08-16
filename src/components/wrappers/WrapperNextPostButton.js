@@ -6,7 +6,8 @@ export default analyticsExtender(NextPostButton, {
   dataAnalyticsEventAction : 'article click',
   dataAnalyticsEventLabel : (props) => {
     const { modifier } = props;
-    return (modifier === 'header')
+
+    return modifier === 'header'
       ? 'top menu arrow'
       : (modifier === 'body')
         ? 'side arrow'

@@ -16,4 +16,15 @@ describe('FeedPageHeader', () => {
 
     expect(wrapper.find(`a[href="${data.rss_path}"]`)).toBePresent();
   });
+
+  it('should renders logo', () => {
+    const data = {
+      title_class : 'test_title_class',
+      logo_path : 'test_logo_path'
+    };
+
+    const wrapper = shallow(<Component { ...data }/>);
+
+    expect(wrapper.find(`.${data.title_class}--has-logo`)).toBePresent();
+  });
 });

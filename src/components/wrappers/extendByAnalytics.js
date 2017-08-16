@@ -11,10 +11,10 @@ const extendByAnalytics = (WrappedComponent, options) => {
       return (
         <WrappedComponent
           dataAttribute={{
-            'data-analytics-event-category' : prepareDataAttr(dataAnalyticsEventCategory, options),
-            'data-analytics-event-action' : prepareDataAttr(dataAnalyticsEventAction, options),
-            'data-analytics-event-label' : prepareDataAttr(dataAnalyticsEventLabel, options),
-            'data-analytics-event-value' : prepareDataAttr(dataAnalyticsEventIndex, options)
+            'data-analytics-event-category' : prepareDataAttr(dataAnalyticsEventCategory, this.props),
+            'data-analytics-event-action' : prepareDataAttr(dataAnalyticsEventAction, this.props),
+            'data-analytics-event-label' : prepareDataAttr(dataAnalyticsEventLabel, this.props),
+            'data-analytics-event-value' : prepareDataAttr(dataAnalyticsEventIndex, this.props)
           }}
           {...this.props} />);
     }

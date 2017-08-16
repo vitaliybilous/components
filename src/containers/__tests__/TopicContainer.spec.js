@@ -43,4 +43,14 @@ describe('FeedPageHeader', () => {
     expect(wrapperMulti.find(ContentMulti)).toBePresent();
     expect(wrapperSingle.find(ContentSingle)).toBePresent();
   });
+
+  it('should render static image (class)', () => {
+    const data = {
+      is_static : true
+    };
+    const selector = 'page-topic--has-static-image';
+    const wrapper = shallow(<Component { ...data }/>);
+
+    expect(wrapper.find(`.${selector}`)).toBePresent();
+  });
 });
